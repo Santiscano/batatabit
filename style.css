@@ -1,0 +1,688 @@
+/* variables */
+/* font-family: 'DM Sans', sans-serif;
+font-family: 'Inter', sans-serif; */
+
+/* recomendaciones de profe degranda como orden para trabajar
+1. posicionamiento
+2. modelo de caja (box model)
+3. tipografia
+4. visuales
+5. miselanius u otros */
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+}
+:root {
+    /* variables colores*/
+    --bitcoin-orange: #f7931a;
+    --soft-orange: #FFE9D5;
+    --secundary-blue: #1A9AF7;
+    --soft-blue: #E7F5FF;
+    --warm-black: #201E1C;
+    --warm-black-1: #282623;
+    --grey: #BABABA;
+    --off-white: #FAF8F7;
+    --just-white: #FFFFFF;
+}
+html{
+    font-size: 62.5%;
+    font-family: "Dm sans", sans-serif;
+    scroll-behavior: smooth;    /*genera un deslizamiento lento*/
+}
+
+/* header */
+header{
+    /* position: relative; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(207.8deg, #201E1C 16.69%, #F7931A 100%) ;
+    width: 100%;
+    min-width: 320px;
+    max-height: 334px;
+}
+header img{             /*logo superior*/
+    width: 150px;
+    height: 24px;
+    margin-top: 60px;
+    align-self: center;
+}
+                    /* texto dentro del header */
+.header--title-container{
+    margin-top: 36px;
+    width: 80%;
+    min-width: 288px;
+    max-width: 900px;
+    max-height: 295px;
+    text-align: center;
+    align-self: center;
+}
+.header--title-container h1{
+    margin-bottom: 24px;
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 26px;
+    color: var(--just-white);
+}
+header h4{
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: var(--off-white);
+    margin-bottom: 32px;
+}
+
+                        /* botoon */
+.header--title-container .header--button{
+    width:229px;
+    height:48px;
+    padding: 12px 16px;
+    background-color: var(--off-white);
+    /* bordes */
+    border: none;
+    box-shadow: 0px 4px 8px rgba(89, 73, 30, 0.16); /*sombra*/
+    border-radius: 4px; /*circular*/
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--warm-black);
+}
+.header--button span{
+    display: inline-block;
+    width: 13px;
+    height: 8px;
+    margin-left: 10px;
+    background-image: url(./assets/icons/down-arrow.svg);
+}
+
+                                /* parte 2 */
+                /* main */
+main{
+    width: 100%;
+    height: auto; 
+    background-color: (--off-white);
+}
+        /* seccion 1 */
+.main-exchange-container{
+    width: 100%;
+    height: auto;
+    padding-top: 60px;
+    /* display:flex;
+    flex-direction: column;       creo que este es el problema de margenes en padding
+    justify-content: center; */
+    text-align: center;
+    background-color: var(--off-white);
+}
+    /* logo BTC */
+.main-exchange-container .backgroundImg{
+    width: 195px;
+    height: 195px;
+    margin: 0px auto;
+    background-size: cover;     /* cover: la distribuye en el total de espacio, contain: la ubica con su tamaño real, tambien tiene % y px*/
+    background-position: center;    
+    background-repeat: no-repeat; 
+      /*la imagen se estirara sin romperse ni repetir*/
+}
+
+/* contenedor textos */
+
+/* textos  */
+.main-exchange-container .main-exchange-container--title{
+    width: 70%;
+    min-width: 278px;
+    max-width: 900px;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+/* h2 */
+.main-exchange-container .main-exchange-container--title h2{
+    margin-top: 375px;
+    height:52px;
+    color: var(--warm-black);
+    font-weight: 700;
+    font-size: 2.4rem;
+    line-height: 2.6rem;
+    text-align: center;
+    margin: 24px auto;
+}
+/* parrafo de h4 */
+.main-exchange-container .main-exchange-container--title p{
+    width: 288px;
+    height: 54px;
+    margin: 0 auto;
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    text-align: center;
+    color: #757575;
+}
+            /* tabla */
+.main-tables-container{
+    width: 80%;
+    margin: 35px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "inter", sans-serif;
+}
+.main-currency-table{
+    display: flex;
+    justify-content:center;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+}
+.main-currency-table .currency-table--title{
+    margin-bottom: 1.5rem;
+    margin-left: 1.8rem;
+    font-size:1.8rem;
+    font-weight: bold;
+    line-height: 2.3rem;
+    color:var(--bitcoin-orange);
+    align-self: start;
+}
+.main-currency-table table{
+    margin: 0 auto;
+    width:60%;
+    min-width: 235px;
+    max-width: 500px;
+    height: 160px;
+    font-family: "inter", sans-serif;
+    background-color: var(--just-white);
+}
+.currency-table--container table td{
+    /* agrego un width de 50% para dividir la tabla en 2 */
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1.9rem;
+    color: #B5B0AC;
+    border: 1px groove #B5B0AC;
+    border-radius: 3px;
+}
+.currency-table--container table .table__right{
+    color: #757575;
+}
+/* texto inferior tabla */
+.currency-table--date{
+    width: 200px;
+    height: 40px;
+    padding: 12px 9px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.4rem;
+    margin: 24px auto;
+    background-color: var(--soft-orange);
+    border-radius: 8px;
+}
+
+
+
+
+
+
+                                    /* seccion 2 negra */
+
+
+/* contenedor 2 */
+.main-section2{
+    background-color: var(--warm-black);
+    width: 100%;
+    min-width: 320px;
+    height: auto;
+    padding: 20px 10px;
+    position: relative; /*pongo esto solo con el fin de darle un punto de ubicacion a la img de la patata pues el position absolute se regira en base a su primer padre directo que tenga el position relative*/
+}
+        /* IMG en medio */
+.main-section2 .patata-sola img{
+    position: absolute;
+    top: calc(0% - 12.5px);
+    left: calc(50% - 20px);
+}
+
+            /* titulos de seccion */
+.main-section2 h2{
+    color: var(--just-white);
+    margin: 0 auto;
+    margin-top: 35px;
+    width: 288px;
+    height: 52px;
+    font-weight: 700;
+    font-size:24px;
+    line-height: 26px;
+    text-align: center;
+}
+.main-section2 .section2-subtitle{
+    width: 288px;
+    height: 18px;
+    font-size: 1.4rem;
+    margin: 32px auto;
+    text-align: center;
+}
+.main-section2 h3 {
+    color: var(--just-white);
+    height: 18px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1.8rem;
+}
+.main-section2 h4 {
+    color: #808080;
+    width: 252px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height:1.8rem;
+}
+.section2-cuadro{
+    width: 288px;
+    max-height: 910px;
+    /* min-height: 150px;      asi lo hizo el profe */
+    margin: 15px auto;
+    border-radius: 4px;
+    background-color: var(--warm-black-1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.16);
+}
+
+.section2-cuadro img, .section2-cuadro h3, .section2-cuadro h4{
+    margin: 5px auto;
+    margin-left: 16px;
+}
+.section2-cuadro:nth-child(6){
+    margin-bottom: 24px;
+}
+.section2-cuadro img{
+    margin-top: 15px;
+}
+/* .main-section2 .section2-cuadro .como-lo-hizo-el-profe{
+    display:inline-block;
+    width: 20px;
+    height: 20px;
+    margin-bottom: 10px;
+    background-image: url(./assets/icons/check-circle.svg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+} */
+
+
+                                /* seccion 3 imagen naranja*/
+
+.main-section3{
+    background-image: url(./assets/img/bitcoinbaby2x.jpg);
+    background-size: cover; /*1-cuando la pantalla es grande la expande para que siga ocupando el 100% del width 2-cuando es pequeña acomoda la imagen para que se vea toda y no se corte*/
+    background-repeat: no-repeat;
+    background-position: center;       /*centro la imagen para que siempre se vea el rostro*/
+    width: 100%;
+    height: 387px;
+    display: flex;          /*el profe no hizo esto sino que uso padding en h2*/
+    justify-content: center;
+
+}
+.main-section3 h2{
+    margin-top: 64px;
+    font-size: 2.4rem;
+    font-weight: bold;   /*bold = 700*/
+    line-height: 26px;
+    color: var(--just-white);
+    /* padding-top: 60px;
+       text-aling: center;          ASI LO HIZO EL PROFE.
+     */
+}
+
+
+                                /* seccion 4 escoge tu plan */
+.main-section4{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.main-section4 .section4-title{
+    margin: 0 15px;
+    margin-top: 64px;
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 2.6rem;
+    text-align: center;
+}
+.main-section4 .section4-subtitle{
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: #757575;
+    margin: 0 20px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* animacion */
+.plan-container--slider{
+    display: flex;
+    height: 316px;
+    overflow-x: scroll;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+}
+/* targetas */
+/* tarjeta 1 hecha por mi */
+.tarjeta-1 .section4-card{
+    margin: 30px auto;
+    scroll-snap-align: center;
+    background-color: var(--just-white);
+    width: 190px;
+    height: 250px;
+    box-shadow: 0 4px 8px rgba(89, 73, 30, 0.16);
+    border-radius: 8px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    scroll-snap-align: center;
+
+}
+.tarjeta-1 .section4-card .card-recomendado {
+    background-color:var(--bitcoin-orange);
+    width: 101px;
+    height: 31px;
+    padding-top: 10px;
+    position: absolute;
+    top: -15px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    line-height: 15px;
+    color:var(--just-white);
+    text-align: center;
+    border-radius: 8px;
+}
+.tarjeta-1 .section4-card .card-title {
+    margin-top: 28px;
+    font-size: 15px;
+    font-weight: 500;
+}
+.tarjeta-1 .card-simbol-dolar{
+    position:absolute;
+    top:60px;
+    left: 50px;
+    font-size: 14px;
+}
+.tarjeta-1 .section4-card .card-99 {
+    font-size: 52px;
+    font-weight: 700;
+}
+.tarjeta-1 .section4-card .card-subtitle {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 15px;
+    text-align: center;
+    color: #757575;
+    margin: 20px 20px;
+}
+.tarjeta-1 .section4-card .card-button{
+    width: 151px;
+    height: 48px;
+    background-color: var(--off-white);
+    color: var(--warm-black);
+    font-family: "Dm sans", sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    border: 2px solid var(--bitcoin-orange);
+    border-radius: 4px;
+}
+
+.tarjeta-1 .section4-card .card-button span{
+    display: inline-block;
+    padding: 10px;
+    background-image: url('./assets/icons/orange-right-arrow.svg');
+    background-repeat: no-repeat;
+    background-size: 26px;
+    vertical-align: text-bottom;
+}
+
+            /* tarjeta 2 hecha como el profe la hizo */
+
+.tarjeta-2{
+    position: relative;
+    /* width: 70%;      esto lo hizo para proporcionar su tamaño y limitar su crecimiento
+    min-width: 230px;
+    max-width: 300px; */
+    width: 190px;       /*pero lo dejo asi para que se vea estetico*/
+    height:250px;
+    margin: 20px auto 0;
+    padding: 0 15px;
+    background-color: var(--just-white);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(89, 73, 30, 0.16);
+    align-items: center;
+    text-align: center;
+}
+
+ .tarjeta-2 .section4-card {
+    position: relative;
+    margin: 0 30px;
+/*  display: flex; 
+    flex-direction: column; 
+    justify-content: center; */
+}
+.tarjeta-2 .section4-card .card-basico{
+    background-color: #199af4;
+    width: 101px;
+    height: 31px;
+    padding-top: 10px;
+    position: absolute;
+    top: -15px;
+    left: 30px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    line-height: 15px;
+    color:var(--just-white);
+    text-align: center;
+    border-radius: 8px;
+}
+.tarjeta-2 .section4-card .card-title {
+    padding-top: 30px;
+    font-size: 15px;
+    font-weight: 500;
+    
+}
+.tarjeta-2 .section4-card .card-99 {
+    padding: 5px 0;
+    font-size: 5.2rem;
+    font-weight: 700;
+    line-height: 6.3rem;
+}
+/* .tarjeta-2 .section4-card .card-99 span {    esta es la forma del profe
+    font-size: 1.2rem;
+    font-weight: 300;
+    vertical-align:text-top; 
+    vertical-align: 25px;
+} */
+.tarjeta-2 .section4-card .card-99::before{     /*con el pseudoelemento lo hizo alumna*/
+    position: absolute;
+    top: 28%;
+    left: 22%;
+    content: "$";
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1rem;
+}
+
+.tarjeta-2 .section4-card .card-subtitle {
+    width: 90%;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 15px;
+    text-align: center;
+    color: #757575;
+    margin: 10px 10px;
+}
+.tarjeta-2 .section4-card .card-button{
+    width: 151px;
+    height: 48px;
+    background-color: var(--off-white);
+    color: var(--warm-black);
+    font-size: 1.4rem;
+    font-weight: 700;
+    font-family: "Dm sans", sans-serif;
+    line-height: 1.8rem;
+    border: 2px solid var(--bitcoin-orange);
+    border-radius: 4px;
+}
+.tarjeta-2 .section4-card .card-button span{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url('./assets/icons/orange-right-arrow.svg');
+    vertical-align: text-bottom;  /*no tengo idea como pero alineo la maldinga flecha*/
+}
+
+/* tarjeta 3 hecha como la 1 pero con detalles de la 2 */
+.tarjeta-3 .section4-card{
+    margin: 30px auto;
+    background-color: var(--just-white);
+    padding: auto;
+    width: 190px;
+    height: 250px;
+    box-shadow: 0 4px 8px rgba(89, 73, 30, 0.16);
+    border-radius: 8px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+}
+.tarjeta-3 .section4-card .card-recomendado {
+    background-color:var(--warm-black-1);
+    width: 101px;
+    height: 31px;
+    padding-top: 10px;
+    position: absolute;
+    top: -15px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    line-height: 15px;
+    color:var(--just-white);
+    text-align: center;
+    border-radius: 8px;
+}
+.tarjeta-3 .section4-card .card-title {
+    margin-top: 28px;
+    font-size: 15px;
+    font-weight: 500;
+}
+.tarjeta-3 .card-simbol-dolar{
+    position:absolute;
+    top:60px;
+    left: 50px;
+    font-size: 14px;
+}
+.tarjeta-3 .section4-card .card-99 {
+    padding: 5px 0;
+    font-size: 5.2rem;
+    font-weight: 700;
+    line-height: 6.3rem;
+}
+.tarjeta-3 .section4-card .card-subtitle {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 15px;
+    text-align: center;
+    color: #757575;
+    margin: 20px 20px;
+}
+.tarjeta-3 .section4-card .card-button{
+    width: 151px;
+    height: 48px;
+    padding: 10px;
+    background-color: var(--off-white);
+    color: var(--warm-black);
+    font-family: "Dm sans", sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    border: 2px solid var(--bitcoin-orange);
+    border-radius: 4px;
+}
+
+.tarjeta-3 .section4-card .card-button span{
+    display: inline-block;
+    padding: 10px;
+    background-image: url('./assets/icons/orange-right-arrow.svg');
+    background-repeat: no-repeat;
+    background-size: 26px;
+    vertical-align: text-bottom;
+}
+
+
+
+
+                                /* footer */
+footer{
+    display: flex;
+    width: 100%;
+    height: 150px;
+    background-color: var(--bitcoin-orange);
+    justify-content: center;
+    align-items: center;
+}
+footer section{
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+/* lado izquierdo */
+/* footer .footer-text{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-right: 35px;
+} */
+footer .footer-text a{
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-weight:500;
+    line-height: 1.8rem;
+    color:var(--just-white);
+    margin: 3px 0;
+}
+/* lado derecho */
+footer .footer-img{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 35px;
+}
+footer .footer-img h5{
+    color: var(--just-white);
+    margin-top: 15px;
+}
+
+                                        /* media queries */
+                /* tablet */
+@media(min-width:768px){}
+
+                /* laptop */
+
+
+
+
+
+
+
+
+
